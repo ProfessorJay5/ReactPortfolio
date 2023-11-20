@@ -1,16 +1,21 @@
 import './App.css';
-import Text from "./Components/text";
-import Buttons from "./Components/buttons";
-import Img from "./Components/img";
-import Projects from "./Components/projects";
+import Portfolio from "./Components/Portfolio";
+import About from "./Components/About";
+import Contact from "./Components/Contact";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <Text />
-      <Buttons />
-      <Img />
-      <Projects />
+      <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Portfolio />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
     </div>
   );
 }
